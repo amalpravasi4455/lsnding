@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page | Pravasis IT Solutions</title>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* Professional Red */
+            --secondary-color: #022668; /* Dark Grey/Black */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f4f4f4;
+            --accent-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Header & Hero Section */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 80px 20px;
+            border-bottom: 5px solid var(--primary-color);
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+            animation: floatImage 4s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--accent-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .card strong {
+            color: var(--secondary-color);
+        }
+
+        /* Why Choose Us Section */
+        .highlight-section {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 50px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .highlight-section h2 {
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .highlight-list li {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .highlight-list li::before {
+            content: "✔";
+            background: var(--primary-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        /* Footer / Contact */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 40px;
+        }
+
+        footer h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.05);
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ff5252;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container { flex-direction: column; text-align: center; }
+            .hero-image { display: none; } /* Hide heavy image on small screens or just center */
+            header h1 { font-size: 2rem; }
+            .highlight-section { padding: 30px 20px; }
+            .card { padding: 20px; }
+        }
+
+        /* Section animations */
+        section {
+            animation: slideUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Build a Powerful Online Presence for Your Business</h1>
+                <p class="hero-subtext">
+                    At <strong>Pravasis IT Solutions Pvt Ltd</strong>, we create modern, fast, and mobile-friendly websites designed to help your business stand out and generate real results.
+                </p>
+                <a href="#services" style="display: inline-block; padding: 12px 30px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; transition: background 0.3s; animation: slideUp 1.2s ease-out;">Explore Services</a>
+            </div>
+            <div class="hero-image">
+                <img src="hero_illustration.png" alt="Web Development Illustration">
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="service_business_1773205771061.png" alt="Business Websites">
+                    <h3>Business Websites</h3>
+                    <p>Establish a professional corporate identity and build trust with your clients.</p>
+                </div>
+                <div class="card">
+                    <img src="service_ecommerce_1773205789207.png" alt="E-Commerce Websites">
+                    <h3>E-Commerce Websites</h3>
+                    <p>Sell products 24/7 with secure, robust, and user-friendly online stores.</p>
+                </div>
+                <div class="card">
+                    <img src="service_development_1773205807965.png" alt="Static & Dynamic Development">
+                    <h3>Static & Dynamic</h3>
+                    <p>Tailored web solutions ranging from simple portfolios to complex systems.</p>
+                </div>
+                <div class="card">
+                    <img src="service_landing_1773205824978.png" alt="Landing Pages">
+                    <h3>Landing Pages</h3>
+                    <p>High-conversion pages specifically designed for your marketing campaigns.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Key Features</h2>
+            <div class="grid">
+                <div class="card"><strong>Professional & Modern Design</strong></div>
+                <div class="card"><strong>Mobile-Friendly & Responsive</strong></div>
+                <div class="card"><strong>SEO-Optimized Structure</strong></div>
+                <div class="card"><strong>Fast Loading Performance</strong></div>
+                <div class="card"><strong>Secure & Reliable Development</strong></div>
+                <div class="card"><strong>Domain & Hosting Support</strong></div>
+            </div>
+        </section>
+
+        <section class="highlight-section">
+            <h2>Why Choose Us</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">We build websites that help businesses grow in the digital world:</p>
+            <ul class="highlight-list">
+                <li>Build credibility</li>
+                <li>Reach more customers online</li>
+                <li>Generate quality leads</li>
+                <li>Grow faster digitally</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <strong>1. Why does my business need a website?</strong>
+                    A website gives your business a professional online presence, helps customers find you on search engines, and builds credibility and trust. It allows your business to generate leads and sales 24/7.
+                </div>
+
+                <div class="faq-item">
+                    <strong>2. How long does it take to build a website?</strong>
+                    Most websites are completed within 5–10 working days, depending on the project requirements, number of pages, and features needed.
+                </div>
+
+                <div class="faq-item">
+                    <strong>3. Do you provide domain and hosting?</strong>
+                    Yes. We provide complete website packages including domain registration and secure hosting, so you don’t have to worry about technical setup.
+                </div>
+
+                <div class="faq-item">
+                    <strong>4. Can I update my website content later?</strong>
+                    Yes. We provide easy-to-manage websites where you can update text, images, and products. We also provide support if you need assistance.
+                </div>
+
+                <div class="faq-item">
+                    <strong>5. Can you integrate WhatsApp chat on the website?</strong>
+                    Yes. We can integrate WhatsApp chat, allowing customers to contact your business instantly, improving lead conversions.
+                </div>
+
+                <div class="faq-item">
+                    <strong>6. Do you help businesses without any technical knowledge?</strong>
+                    Yes. Our team handles everything from design to launch, making the process simple and hassle-free for business owners.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <h2>Launch Your Website Today</h2>
+        <p>Take your business online with a powerful and professional website.</p>
+        <div class="contact-info">
+            <p>📞 <strong>9037014455</strong></p>
+            <p>📧 <a href="mailto:development.pravasisit@gmail.com">development.pravasisit@gmail.com</a></p>
+            <p>🌐 <a href="http://www.pravasiit.com" target="_blank">www.pravasiit.com</a></p>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.6;">&copy; 2026 Pravasis IT Solutions Pvt Ltd. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
